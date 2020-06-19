@@ -3,11 +3,10 @@
 namespace Narwanimonish\SESEvents;
 
 use Illuminate\Support\ServiceProvider;
-use Narwanimonish\SESEvents\Commands\SESEventsCommand;
 
 class SESEventsServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -23,16 +22,12 @@ class SESEventsServiceProvider extends ServiceProvider
                     __DIR__ . '/../database/migrations/create_ses_events.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_ses_events.php'),
                 ], 'migrations');
             }
-
-            $this->commands([
-                SESEventsCommand::class,
-            ]);
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'skeleton');
     }
 
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/ses-events.php', 'ses-events');
     }
