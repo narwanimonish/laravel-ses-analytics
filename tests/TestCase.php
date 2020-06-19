@@ -2,8 +2,8 @@
 
 namespace Narwanimonish\SESEvents\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Narwanimonish\SESEvents\SESEventsServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
