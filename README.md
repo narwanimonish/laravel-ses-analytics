@@ -1,10 +1,8 @@
-# :package_description
+# Laravel package to record SES events
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/:package_name.svg?style=flat-square)](https://packagist.org/packages/spatie/:package_name)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/:package_name/run-tests?label=tests)](https://github.com/spatie/:package_name/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/:package_name.svg?style=flat-square)](https://packagist.org/packages/spatie/:package_name)
-
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_email``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can also run `configure-skeleton.sh` to do this automatically.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/narwanimonish/laravel-ses-events.svg?style=flat-square)](https://packagist.org/packages/narwanimonish/laravel-ses-events)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/narwanimonish/laravel-ses-events/run-tests?label=tests)](https://github.com/narwanimonish/laravel-ses-events/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/narwanimonish/laravel-ses-events.svg?style=flat-square)](https://packagist.org/packages/narwanimonish/laravel-ses-events)
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
@@ -34,6 +32,7 @@ php artisan migrate
 ```
 
 You can publish the config file with:
+
 ```bash
 php artisan vendor:publish --provider="Spatie\Skeleton\SkeletonServiceProvider" --tag="config"
 ```
@@ -47,14 +46,14 @@ return [
 
 ## Usage
 
-``` php
+```php
 $skeleton = new Spatie\Skeleton();
 echo $skeleton->echoPhrase('Hello, Spatie!');
 ```
 
 ## Testing
 
-``` bash
+```bash
 composer test
 ```
 
@@ -72,8 +71,8 @@ If you discover any security related issues, please email freek@spatie.be instea
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
-- [All Contributors](../../contributors)
+-   [Monish Narwani](https://github.com/narwanimonish)
+-   [All Contributors](../../contributors)
 
 ## License
 

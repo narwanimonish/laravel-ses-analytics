@@ -1,17 +1,15 @@
 {
-    "name": "spatie/:package_name",
-    "description": ":package_description",
+    "name": "narwanimonish/laravel-ses-events",
+    "description": "Laravel package to record SES events",
     "keywords": [
-        "spatie",
-        ":package_name"
+        "laravel-ses-events"
     ],
-    "homepage": "https://github.com/spatie/:package_name",
+    "homepage": "https://github.com/narwanimonish/laravel-ses-events",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": "https://spatie.be",
+            "name": "Monish Narwani",
+            "email": "narwanimonish@gmail.com",
             "role": "Developer"
         }
     ],
@@ -27,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src"
+            "Narwanimonish\\SESEvents\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Narwanimonish\\SESEvents\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Narwanimonish\\SESEvents\\SESEventsServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "SESEvents": "Narwanimonish\\SESEvents\\SESEventsFacade"
             }
         }
     },

@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace Narwanimonish\SESEvents;
 
 use Illuminate\Support\Facades\Facade;
 
