@@ -2,7 +2,9 @@
 
 namespace Narwanimonish\SESEvents;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Narwanimonish\SESEvents\Http\Controllers\Api\SESEventsApiController;
 
 class SESEventsServiceProvider extends ServiceProvider
 {
@@ -17,7 +19,7 @@ class SESEventsServiceProvider extends ServiceProvider
                 __DIR__ . '/../resources/views' => base_path('resources/views/vendor/laravel-ses-events'),
             ], 'views');
 
-            if (! class_exists('CreatePackageTable')) {
+            if (!class_exists('CreatePackageTable')) {
                 $this->publishes([
                     __DIR__ . '/../database/migrations/create_ses_events.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_ses_events.php'),
                 ], 'migrations');
@@ -25,6 +27,12 @@ class SESEventsServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'skeleton');
+
+        Route::macro('ses_events_api', function (string $prefix) {
+            Route::prefix($prefix)->group(function () {
+                Route::get('/events-webhook', [SESEventsApiController::class, 'webhook']);
+            });
+        });
     }
 
     public function register(): void
