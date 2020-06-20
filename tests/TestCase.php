@@ -2,6 +2,7 @@
 
 namespace Narwanimonish\SESEvents\Tests;
 
+use Illuminate\Support\Facades\Schema;
 use Narwanimonish\SESEvents\SESEventsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -23,16 +24,17 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        $app['config']->set('database.default', 'sqlite');
+        /* $app['config']->set('database.default', 'sqlite');
         $app['config']->set('database.connections.sqlite', [
             'driver' => 'sqlite',
             'database' => ':memory:',
             'prefix' => '',
-        ]);
+        ]); */
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        Schema::dropAllTables();
+
+
+        include_once __DIR__ . '/../database/migrations/create_ses_events.php.stub';
+        (new \CreateSkeletonTable())->up();
     }
 }

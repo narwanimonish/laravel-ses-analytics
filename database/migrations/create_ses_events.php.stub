@@ -11,9 +11,22 @@ class CreateSkeletonTable extends Migration
         Schema::create('ses_events', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            // add fields
+            $table->string('message_id', 100)->unique();
+            $table->string('event_type', 50);
+            $table->string('from_email');
+            $table->string('to_email');
+            $table->string('subject');
 
-            $table->timestamps();
+            $table->timestampTz('sent_at')->nullable();
+            $table->timestampTz('delivered_at')->nullable();
+            $table->timestampTz('first_opened_at')->nullable();
+            $table->timestampTz('first_clicked_at')->nullable();
+            $table->string('first_clicked_url')->nullable();
+            $table->timestampTz('bounced_at')->nullable();
+
+            $table->timestampsTz();
+
+            $table->index(['message_id']);
         });
     }
 }
