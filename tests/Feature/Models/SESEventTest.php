@@ -14,7 +14,7 @@ class SESEventTest extends TestCase
             $event->save();
         });
 
-        $this->assertDatabaseCount('ses_events', 10);
+        $this->assertEquals(10, SESEvent::count());
     }
 
     /** @test */
