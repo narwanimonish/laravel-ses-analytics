@@ -26,6 +26,7 @@ class SESEventsApiController
         if ($message['Type'] === 'SubscriptionConfirmation') {
             // Confirm the subscription by sending a GET request to the SubscribeURL
             Http::get($message['SubscribeURL']);
+
             return;
         }
 
