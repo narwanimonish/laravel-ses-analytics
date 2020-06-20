@@ -16,4 +16,14 @@ class SESEventTest extends TestCase
 
         $this->assertDatabaseCount('ses_events', 10);
     }
+
+    /** @test */
+    public function check_if_event_is_delivered()
+    {
+        factory(SESEvent::class, 10)->create()->each(function ($event) {
+            $event->save();
+        });
+
+        $this->assertEquals(NULL, SESEvent::find(1)->isDelivered());
+    }
 }
