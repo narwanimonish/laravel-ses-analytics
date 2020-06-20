@@ -24,6 +24,6 @@ class SESEventTest extends TestCase
             $event->save();
         });
 
-        $this->assertEquals(NULL, SESEvent::find(1)->isDelivered());
+        $this->assertEquals(null, SESEvent::find(1)->isDelivered());
     }
 }
