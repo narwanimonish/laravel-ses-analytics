@@ -13,7 +13,9 @@ class SESEventsApiController
 {
     public function eventWebhook(Request $request)
     {
+        dd("here..");
         $message = Message::fromRawPostData();
+        dd($message);
         $validator = new MessageValidator();
 
         try {
@@ -42,5 +44,10 @@ class SESEventsApiController
         if ($postData->fails()) {
             return response()->json($postData->errors(), 422);
         }
+    }
+
+    public function test()
+    {
+        dd("hello");
     }
 }

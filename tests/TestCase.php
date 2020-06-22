@@ -2,6 +2,7 @@
 
 namespace Narwanimonish\SESEvents\Tests;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Narwanimonish\SESEvents\SESEventsServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -13,6 +14,8 @@ class TestCase extends Orchestra
         parent::setUp();
 
         $this->withFactories(__DIR__ . '/database/factories');
+
+        Route::ses_events_api('ses_events');
     }
 
     protected function getPackageProviders($app)
